@@ -73,18 +73,18 @@ class Example
     public mixed $price;
 }
 
-$person = new Example();
-$person->firstname = null;
-$person->lastname = "Smith";
-$person->email = "john@invalidaemail";
-$person->price = "$10.50";
-$person->age = 5;
+$example = new Example();
+$example->firstname = null;
+$example->lastname = "Smith";
+$example->email = "john@invalidaemail";
+$example->price = "$10.50";
+$example->age = 5;
 
 $validator = new Validator(
     errorType: 'aggregatable'
 );
 
-$result = $validator->validate($person);
+$result = $validator->validate($example);
 
 if ($result->hasErrors()) {
     print_r($result->getErrors());
