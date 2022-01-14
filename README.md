@@ -1,5 +1,5 @@
 # Attribute Validator
-##### Elegantly validates PHP class properties
+### Elegantly validates PHP class properties
 
 Attribute Validator allows you to set declarative validation rules on top of PHP class properties.
 It heavily relies on PHP >=8.x Reflection Api to extract the Attributes for validation.
