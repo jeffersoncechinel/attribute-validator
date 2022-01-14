@@ -8,7 +8,7 @@ It heavily relies on PHP >=8.x Reflection Api to extract the Attributes for vali
 Supported error types
 ---
 - Aggregatable - Aggregates multiple error messages in one validation run.
-- Throwable - Throws an exception as soon as a fail validation ocurs. 
+- Throwable - Throws an exception as soon as a fail validation occurs. 
 
 List of rules
 ----
