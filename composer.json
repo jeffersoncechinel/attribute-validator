@@ -1,0 +1,36 @@
+{
+    "name": "jeffersoncechinel/attribute-validator",
+    "type": "library",
+    "readme": "https://github.com/jeffersoncechinel/attribute-validator/blob/master/README.md",
+    "license": "MIT",
+    "keywords": [
+        "php8 attributes",
+        "attribute validator",
+        "php8 validator"
+    ],
+    "authors": [
+        {
+            "name": "Jefferson Cechinel",
+            "email": "jclorets@hotmail.com",
+            "homepage": "http://www.jeffersoncechinel.com",
+            "role": "Creator"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "JC\\Validator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
