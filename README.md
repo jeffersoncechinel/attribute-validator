@@ -3,6 +3,9 @@
 Attribute Validator allows you to set declarative validation rules on top of PHP class properties.
 It heavily relies on PHP >=8.x Reflection Api to extract the Attributes for validation.
 
+It suits well for domain models(DDD) and DTO validations which tends to get fat and complicated over the time. To counterpart this scenario this library helps decoupling models and dtos from the validation process avoiding tons of 
+manual validations in setter methods.
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 Supported error types
@@ -18,6 +21,7 @@ List of rules
 - Number - Validates if a value is numeric.
 - Email - Validates if and email is valid.
 - Range - Validates if value number is in range.
+- ... more to come. Interested in contribute? :)
 
 Requirements
 ----
