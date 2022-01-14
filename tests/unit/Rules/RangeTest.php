@@ -8,7 +8,7 @@ use Tests\Unit\Templates\PersonFactory;
 use JC\Validator\Validator;
 use PHPUnit\Framework\TestCase;
 
-class SizeTest extends TestCase
+class RangeTest extends TestCase
 {
     /**
      * @throws Exception

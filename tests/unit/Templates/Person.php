@@ -6,7 +6,7 @@ use JC\Validator\Rules\Email;
 use JC\Validator\Rules\Length;
 use JC\Validator\Rules\NotNull;
 use JC\Validator\Rules\Number;
-use JC\Validator\Rules\Size;
+use JC\Validator\Rules\Range;
 
 class Person
 {
@@ -17,7 +17,7 @@ class Person
     #[NotNull(label: 'Lastname', errorMessage: '{label} cannot be null.')]
     public ?string $lastname = null;
 
-    #[Size(
+    #[Range(
         min: 10,
         max: 20,
         label: 'Age',

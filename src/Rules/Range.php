@@ -6,7 +6,7 @@ use Attribute;
 use JC\Validator\RuleResult;
 
 #[Attribute]
-final class Size implements RuleInterface
+final class Range implements RuleInterface
 {
     const errorMessage = 'Value cannot be less than {min} or higher than {max}.';
 
