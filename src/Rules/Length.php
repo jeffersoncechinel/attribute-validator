@@ -8,7 +8,7 @@ use JC\Validator\RuleResult;
 #[Attribute]
 final class Length implements RuleInterface
 {
-    const errorMessage = 'Length cannot be lower than {min} or higher than {max} characters.';
+    const errorMessage = 'Value length cannot be lower than {min} or higher than {max} characters.';
 
     public function __construct(
         public int|null $min,

@@ -8,7 +8,7 @@ use JC\Validator\RuleResult;
 #[Attribute]
 final class Number implements RuleInterface
 {
-    const errorMessage = 'Value cannot be null.';
+    const errorMessage = 'Invalid number.';
 
     public function __construct(
         public string|null $propertyName = null,
