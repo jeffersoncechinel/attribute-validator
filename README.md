@@ -85,8 +85,37 @@ if ($result->hasErrors()) {
     print_r($result->getErrors());
 }
 
+```
+#### Results
 
 ```
+Array
+(
+    [firstname] => Array
+        (
+            [0] => Value cannot be null.
+        )
+
+    [email] => Array
+        (
+            [0] => Invalid email address.
+        )
+
+    [age] => Array
+        (
+            [0] => Value cannot be less than 10 or higher than 20.
+        )
+
+    [price] => Array
+        (
+            [0] => Price is invalid.
+        )
+
+)
+
+```
+
+
 
 Contributing
 ----

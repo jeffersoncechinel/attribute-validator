@@ -14,19 +14,16 @@ class Validator
      * Throws exceptions on validation errors.
      */
     const ERROR_TYPE_THROWABLE = 'throwable';
-
     /**
      * Stores all failure messages to be retrivied
      * at the end of the execution.
      * ps: notification pattern.
      */
     const ERROR_TYPE_AGGREGATABLE = 'aggregatable';
-
     /**
      * Dispatch an event.
      */
     const ERROR_TYPE_EVENT = 'eventable';
-
     public array $errors = [];
 
     public function __construct(
@@ -57,6 +54,11 @@ class Validator
                 // get rule class name
                 $class = $attribute->getName();
 
+                // check if validator owns the provided rule class
+                if (!Rules::canInstantiate($class)) {
+                    continue;
+                }
+
                 // get the filled property value from client obj
                 $propertyValue = [
                     'propertyName' => $property->getName(),
@@ -66,12 +68,10 @@ class Validator
                 // instantiate rule with attribute params + client obj property value
                 $params = array_merge($propertyValue, $attribute->getArguments());
 
-                //todo verify if class really is what it says it is before instantiate
-
-                $ruleInstance = new ($class)(...$params);
-
                 // run validation process
                 /** @var RuleResult $result */
+
+                $ruleInstance = new ($class)(...$params);
                 $result = $ruleInstance->run();
 
                 // process the validation response
