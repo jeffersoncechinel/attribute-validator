@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\Templates;
 
+use JC\Validator\Rules\UUID;
 use JC\Validator\Rules\Email;
 use JC\Validator\Rules\Length;
 use JC\Validator\Rules\NotNull;
@@ -40,4 +41,7 @@ class Person
 
     #[Datetime(format: 'H:i')]
     public ?string $time = null;
+    
+    #[UUID]
+    public ?string $uuidv4 = null;
 }

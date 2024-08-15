@@ -12,7 +12,8 @@ class Rules
             'JC\Validator\Rules\Email' => 'Email',
             'JC\Validator\Rules\Length' => 'Length',
             'JC\Validator\Rules\Range' => 'Range',
-            'JC\Validator\Rules\Datetime' => 'Datetime'
+            'JC\Validator\Rules\Datetime' => 'Datetime',
+            'JC\Validator\Rules\UUID' => 'UUID'
         ];
     }
 

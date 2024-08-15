@@ -23,7 +23,8 @@ List of rules
 - Email - Validates if and email is valid.
 - Range - Validates if value number is in range.
 - Datetime - Validates datetime, date and time in any format.
-- ... more to come. Interested in contribute? :)
+- UUID - Validates if value is in uuid format.
+- ...
 
 Requirements
 ----
@@ -53,6 +54,7 @@ use JC\Validator\Rules\Length;
 use JC\Validator\Rules\NotNull;
 use JC\Validator\Rules\Number;
 use JC\Validator\Rules\Datetime;
+use JC\Validator\Rules\UUID;
 use JC\Validator\Rules\Size;
 use JC\Validator\Validator;
 
@@ -82,6 +84,9 @@ class Example
 
     #[Datetime(format: 'H:i')]
     public ?string $time = null;
+    
+    #[UUID]
+    public ?string $uuidv4 = null;
 }
 
 $example = new Example();
@@ -93,6 +98,7 @@ $example->age = 5;
 $example->bornAt = "2020-01-01T00:00:00.000Z";
 $example->createdAt = "2020-01-01";
 $example->time = "23:30";
+$example->uuidv4 = "123e4567-e89b-12d3-a456-426614174000";
 
 $validator = new Validator(
     errorType: 'aggregatable'
