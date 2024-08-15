@@ -22,6 +22,7 @@ List of rules
 - Number - Validates if a value is numeric.
 - Email - Validates if and email is valid.
 - Range - Validates if value number is in range.
+- Datetime - Validates datetime, date and time in any format.
 - ... more to come. Interested in contribute? :)
 
 Requirements
@@ -51,6 +52,7 @@ use JC\Validator\Rules\Email;
 use JC\Validator\Rules\Length;
 use JC\Validator\Rules\NotNull;
 use JC\Validator\Rules\Number;
+use JC\Validator\Rules\Datetime;
 use JC\Validator\Rules\Size;
 use JC\Validator\Validator;
 
@@ -71,6 +73,15 @@ class Example
     
     #[Number(label: 'Price', errorMessage: '{label} is invalid.')]
     public mixed $price;
+    
+    #[Datetime(format: 'Y-m-d\TH:i:s.v\Z')]
+    public ?string $bornAt = null;
+
+    #[Datetime(format: 'Y-m-d')]
+    public ?string $createdAt = null;
+
+    #[Datetime(format: 'H:i')]
+    public ?string $time = null;
 }
 
 $example = new Example();
@@ -79,6 +90,9 @@ $example->lastname = "Smith";
 $example->email = "john@invalidaemail";
 $example->price = "$10.50";
 $example->age = 5;
+$example->bornAt = "2020-01-01T00:00:00.000Z";
+$example->createdAt = "2020-01-01";
+$example->time = "23:30";
 
 $validator = new Validator(
     errorType: 'aggregatable'
@@ -124,7 +138,7 @@ Array
 
 Contributing
 ----
-Pull requests are welcome.
+Pull requests are welcome! Contribute!
 
 License
 ----

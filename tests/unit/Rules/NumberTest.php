@@ -23,7 +23,7 @@ class NumberTest extends TestCase
         );
 
         $obj = $validator->validate($person);
-        $this->assertEquals(false, $obj->hasErrors());
+        $this->assertFalse($obj->hasErrors());
     }
 
     /**
@@ -40,7 +40,7 @@ class NumberTest extends TestCase
 
         $obj = $validator->validate($person);
 
-        $this->assertEquals(true, $obj->hasErrors());
+        $this->assertTrue($obj->hasErrors());
     }
 
     public static function buildPerson(): Person

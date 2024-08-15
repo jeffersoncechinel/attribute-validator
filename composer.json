@@ -6,13 +6,15 @@
     "keywords": [
         "php8 attributes",
         "attribute validator",
-        "php8 validator"
+        "php8 validator",
+        "php validation",
+        "simple validation"
     ],
     "authors": [
         {
             "name": "Jefferson Cechinel",
             "email": "jclorets@hotmail.com",
-            "homepage": "http://www.jeffersoncechinel.com",
+            "homepage": "https://jeffersoncechinel.com",
             "role": "Creator"
         }
     ],

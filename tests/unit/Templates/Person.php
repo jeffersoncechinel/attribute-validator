@@ -34,4 +34,10 @@ class Person
     
     #[Datetime(format: 'Y-m-d\TH:i:s.v\Z')]
     public ?string $bornAt = null;
+
+    #[Datetime(format: 'Y-m-d')]
+    public ?string $createdAt = null;
+
+    #[Datetime(format: 'H:i')]
+    public ?string $time = null;
 }

@@ -22,13 +22,13 @@ class EmailTest extends TestCase
         );
 
         $obj = $validator->validate($person);
-        $this->assertEquals(false, $obj->hasErrors());
+        $this->assertFalse($obj->hasErrors());
     }
 
     /**
      * @throws Exception
      */
-    public function testShouldNotPassIfEmailIsInValid()
+    public function testShouldNotPassIfEmailIsInvalid()
     {
         $person = self::buildPerson();
         $person->email = 'john@smith';
@@ -38,7 +38,7 @@ class EmailTest extends TestCase
         );
 
         $obj = $validator->validate($person);
-        $this->assertEquals(true, $obj->hasErrors());
+        $this->assertTrue($obj->hasErrors());
     }
 
     public static function buildPerson(): Person
