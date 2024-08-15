@@ -15,6 +15,8 @@ final class Number implements RuleInterface
         public string|null $label = null,
         public string|null $errorMessage = null,
         public mixed $value = null,
+        public string|null $positiveOnly = null,
+        public string|null $negativeOnly = null,
     ) {
     }
 
@@ -31,6 +33,20 @@ final class Number implements RuleInterface
 
     private function validate(): bool
     {
+        if (!$this->negativeOnly && !$this->positiveOnly) {
+            return is_numeric($this->value);
+        }
+        
+        if ($this->negativeOnly) {
+            $this->errorMessage = 'Invalid negative number.';
+            return is_numeric($this->value) && $this->value < 0;
+        }
+        
+        if ($this->positiveOnly) {
+            $this->errorMessage = 'Invalid positive number.';
+            return is_numeric($this->value) && $this->value > 0;
+        }
+        
         return is_numeric($this->value);
     }
 

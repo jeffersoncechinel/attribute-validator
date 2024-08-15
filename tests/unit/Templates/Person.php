@@ -44,4 +44,10 @@ class Person
     
     #[UUID]
     public ?string $uuidv4 = null;
+
+    #[Number(positiveOnly: true)]
+    public ?int $positiveNumber = null;
+    
+    #[Number(negativeOnly: true)]
+    public ?int $negativeNumber = null;
 }
