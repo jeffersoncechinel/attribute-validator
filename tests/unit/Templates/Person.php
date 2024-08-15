@@ -7,6 +7,7 @@ use JC\Validator\Rules\Length;
 use JC\Validator\Rules\NotNull;
 use JC\Validator\Rules\Number;
 use JC\Validator\Rules\Range;
+use JC\Validator\Rules\Datetime;
 
 class Person
 {
@@ -30,4 +31,7 @@ class Person
     
     #[Number]
     public ?string $number = null;
+    
+    #[Datetime(format: 'Y-m-d\TH:i:s.v\Z')]
+    public ?string $bornAt = null;
 }

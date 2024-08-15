@@ -98,7 +98,7 @@ class Validator
         }
     }
 
-    public function addError($field, $message)
+    public function addError($field, $message): void
     {
         $this->errors[$field][] = $message;
     }

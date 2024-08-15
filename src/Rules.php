@@ -11,7 +11,8 @@ class Rules
             'JC\Validator\Rules\Number' => 'Number',
             'JC\Validator\Rules\Email' => 'Email',
             'JC\Validator\Rules\Length' => 'Length',
-            'JC\Validator\Rules\Range' => 'Range'
+            'JC\Validator\Rules\Range' => 'Range',
+            'JC\Validator\Rules\Datetime' => 'Datetime'
         ];
     }
 
