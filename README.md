@@ -35,7 +35,7 @@ Installation
 Use [composer](https://getcomposer.org/download/) package manager.
 
 ```bash
-composer require jeffersoncechinel/attribute-validator:"dev-main"
+composer require jeffersoncechinel/attribute-validator
 ```
 
 Usage example
