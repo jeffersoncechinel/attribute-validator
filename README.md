@@ -55,7 +55,7 @@ use JC\Validator\Rules\NotNull;
 use JC\Validator\Rules\Number;
 use JC\Validator\Rules\Datetime;
 use JC\Validator\Rules\UUID;
-use JC\Validator\Rules\Size;
+use JC\Validator\Rules\Range;
 use JC\Validator\Validator;
 
 class Example
@@ -70,7 +70,7 @@ class Example
     #[Email]
     public string|null $email = null;
     
-    #[Size(min: 10, max: 20)]
+    #[Range(min: 10, max: 20)]
     public string|int|float $age;
     
     #[Number(label: 'Price', errorMessage: '{label} is invalid.')]
@@ -87,6 +87,12 @@ class Example
     
     #[UUID]
     public ?string $uuidv4 = null;
+    
+    #[Number(positiveOnly: true)]
+    public ?string $positiveNumber = null;
+    
+    #[Number(negativeOnly: true)]
+    public ?string $negativeNumber = null;
 }
 
 $example = new Example();
@@ -99,6 +105,8 @@ $example->bornAt = "2020-01-01T00:00:00.000Z";
 $example->createdAt = "2020-01-01";
 $example->time = "23:30";
 $example->uuidv4 = "123e4567-e89b-12d3-a456-426614174000";
+$example->positiveNumber = 10;
+$example->negativeNumber = -10;
 
 $validator = new Validator(
     errorType: 'aggregatable'
